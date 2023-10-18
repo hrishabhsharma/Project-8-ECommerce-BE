@@ -43,7 +43,7 @@ const appliancesData = async (req, res) => {
 const productData = async (req, res) => {
   try {
     const url = req.params
-    const data = await Products.find({ category: url.category, id: url.id })
+    const data = await Products.findOne({ category: url.category, id: url.id })
     res.send({ data: data })
   } catch (error) {
     res.send("error occurred", error)

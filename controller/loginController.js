@@ -52,4 +52,8 @@ const login = async (req, res) => {
 
 }
 
+const Cart = (req,res)=>{
+  
+}
+
 module.exports = { login, signup }
