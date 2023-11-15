@@ -1,10 +1,10 @@
 const express = require('express')
 const cors = require("cors")
 const connectToDb = require("./config/connection")
+const router = require('./router/appRouting')
 const port = 4000
 
 require('dotenv').config()
-const router = require('./router/appRouting')
 
 const app = express()
 app.use(express.json())
