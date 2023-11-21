@@ -1,6 +1,15 @@
 const mongoose = require("mongoose")
 const Schema = mongoose.Schema
 
+const orderSchema = mongoose.Schema(
+  {
+    cartItem: Object,
+    cartTotalAmount: Number,
+    cartTotalQuantity: Number,
+  },
+  { timestamps: true }
+)
+
 const UserSchema = new Schema({
   name: {
     type: String,
@@ -31,7 +40,8 @@ const UserSchema = new Schema({
     quantity: {
       type: Number,
     }
-  }]
+  }],
+  orderedProducts: [{ type: orderSchema }]
 })
 
 module.exports = mongoose.model('Users', UserSchema)

@@ -20,9 +20,9 @@ const signup = async (req, res) => {
     const user = await Users.create(temp)
 
     return res.status(200).send({
-      user,
       msg: "User is registered, Successfully!!",
       token: token,
+      user,
     })
   }
 
@@ -36,7 +36,7 @@ const login = async (req, res) => {
   try {
     const { email, password } = req.body
 
-    const existingUser = await Users.findOne({ email })
+    const existingUser = await Users.findOne({ email }).populate('cart.productId')
     if (!existingUser) {
       return res.status(401).send({ msg: "User is not registered" })
     }
