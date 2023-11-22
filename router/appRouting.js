@@ -13,6 +13,6 @@ router.delete("/cart/:userId/:productId", Controller.deleteFromCart)
 router.post("/login", login)
 router.post("/signup", signup)
 
-router.post('/search', Controller.productSearch)
+// router.post('/search', Controller.productSearch)
 
 module.exports = router

@@ -12,16 +12,16 @@ const productData = async (req, res) => {
   }
 }
 
-const productSearch = async (req, res) => {
-  try {
-    const search = new RegExp(req.body.search, 'i')
-    const data = await Products.find({ title: search })
+// const productSearch = async (req, res) => {
+//   try {
+//     const search = new RegExp(req.body.search, 'i')
+//     const data = await Products.find({ title: search })
 
-    res.status(200).send(data)
-  } catch (error) {
-    res.status(500).send({ msg: "Product is not found", error })
-  }
-}
+//     res.status(200).send(data)
+//   } catch (error) {
+//     res.status(500).send({ msg: "Product is not found", error })
+//   }
+// }
 
 const cartData = async (req, res) => {
   try {
@@ -97,7 +97,7 @@ const deleteFromCart = async (req, res) => {
 
 module.exports = {
   productData,
-  productSearch,
+  // productSearch,
   cartData,
   addToCart,
   removeToCart,
